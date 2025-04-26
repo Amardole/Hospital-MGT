@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hospital Management - Appointments</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="appointments.component.css">
+</head>
+<body>
+  <!-- Enhanced Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <div class="brand-container">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-activity brand-icon">
+            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+          </svg>
+          <span class="brand-text">Hospital Management</span>
+        </div>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/patients">
+              <span class="nav-icon"><i class="fas fa-user-injured"></i></span>
+              <span class="nav-text">Patients</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" routerLink="/appointments">
+              <span class="nav-icon"><i class="fas fa-calendar-check"></i></span>
+              <span class="nav-text">Appointments</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/medicines">
+              <span class="nav-icon"><i class="fas fa-pills"></i></span>
+              <span class="nav-text">Medicines</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Appointments Content -->
+  <div class="appointments-container">
+  <!-- Form Section -->
+<section class="form-section">
+  <h2>{{ isEditMode ? 'Update' : 'Schedule New' }} Appointment</h2>
+  <form (ngSubmit)="addOrUpdateAppointment()" #appointmentFormRef="ngForm" class="appointment-form">
+    <div class="form-grid">
+      <div class="form-group">
+        <label for="patientName">Patient Name</label>
+        <input [(ngModel)]="appointmentForm.patientName" name="patientName" id="patientName" class="form-control" placeholder="Enter patient name" required>
+      </div>
+
+      <div class="form-group">
+        <label for="doctorName">Doctor</label>
+        <select [(ngModel)]="appointmentForm.doctorName" name="doctorName" id="doctorName" class="form-control" required>
+          <option value="">Select doctor</option>
+          <option value="Dr. Smith">Dr. Smith</option>
+          <option value="Dr. Johnson">Dr. Johnson</option>
+          <option value="Dr. Williams">Dr. Williams</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="appointmentDate">Date</label>
+        <input [(ngModel)]="appointmentForm.appointmentDate" name="appointmentDate" id="appointmentDate" type="date" class="form-control" required>
+      </div>
+
+      <div class="form-group">
+        <label for="appointmentTime">Time</label>
+        <input [(ngModel)]="appointmentForm.appointmentTime" name="appointmentTime" id="appointmentTime" type="time" class="form-control" required>
+      </div>
+
+      <div class="form-group">
+        <label for="reason">Reason</label>
+        <textarea [(ngModel)]="appointmentForm.reason" name="reason" id="reason" class="form-control" placeholder="Enter appointment reason" required></textarea>
+      </div>
+    </div>
+
+    <div class="form-actions mt-3">
+      <button type="submit" class="btn btn-primary">
+        <i class="fas fa-calendar-plus"></i> {{ isEditMode ? 'Update' : 'Schedule' }} Appointment
+      </button>
+      <button *ngIf="isEditMode" type="button" (click)="resetForm()" class="btn btn-secondary ms-2">
+        <i class="fas fa-times"></i> Cancel
+      </button>
+    </div>
+  </form>
+</section>
+
+<!-- Appointments List Section -->
+<section class="list-section mt-5">
+  <h2 class="section-title">Appointment Records</h2>
+
+  <div class="table-responsive">
+    <table class="table table-bordered table-hover">
+      <thead class="table-light">
+        <tr>
+          <th>Patient</th>
+          <th>Doctor</th>
+          <th>Date</th>
+          <th>Time</th>
+          <th>Reason</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let appointment of appointments">
+          <td>{{ appointment.patientName }}</td>
+          <td>{{ appointment.doctorName }}</td>
+          <td>{{ appointment.appointmentDate | date }}</td>
+          <td>{{ appointment.appointmentTime }}</td>
+          <td>{{ appointment.reason }}</td>
+          <td>
+            <button (click)="editAppointment(appointment)" class="btn btn-sm btn-warning">
+              <i class="fas fa-edit"></i> Edit
+            </button>
+            <button (click)="deleteAppointment(appointment.id)" class="btn btn-sm btn-danger ms-2">
+              <i class="fas fa-trash-alt"></i> Delete
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+
+    <!-- Appointments List Section -->
+    <section class="list-section">
+      <h2 class="section-title">Appointment Records</h2>
+      
+      <div class="appointment-table">
+        <div class="table-header">
+          <div>Patient</div>
+          <div>Doctor</div>
+          <div>Date</div>
+          <div>Time</div>
+          <div>Reason</div>
+          <div>Actions</div>
+        </div>
+        
+        <div class="table-body">
+          <div class="appointment-row" *ngFor="let appointment of appointments">
+            <div>{{ appointment.patientName }}</div>
+            <div>{{ appointment.doctorName }}</div>
+            <div>{{ appointment.appointmentDate | date }}</div>
+            <div>{{ appointment.appointmentTime }}</div>
+            <div class="reason">{{ appointment.reason }}</div>
+            <div class="actions">
+              <button (click)="editAppointment(appointment)" class="update-btn">
+                <i class="fas fa-edit"></i> Edit
+              </button>
+              <button (click)="deleteAppointment(appointment.id)" class="delete-btn">
+                <i class="fas fa-trash-alt"></i> Delete
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

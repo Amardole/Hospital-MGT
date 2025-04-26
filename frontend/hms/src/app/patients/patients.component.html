@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hospital Management - Patients</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="patients.component.css">
+</head>
+<body>
+  <!-- Enhanced Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <div class="brand-container">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-activity brand-icon">
+            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+          </svg>
+          <span class="brand-text">Hospital Management</span>
+        </div>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link active" routerLink="/patients">
+              <span class="nav-icon"><i class="fas fa-user-injured"></i></span>
+              <span class="nav-text">Patients</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/appointments">
+              <span class="nav-icon"><i class="fas fa-calendar-check"></i></span>
+              <span class="nav-text">Appointments</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/medicines">
+              <span class="nav-icon"><i class="fas fa-pills"></i></span>
+              <span class="nav-text">Medicines</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Patients Content -->
+  <div class="patients-container">
+    <!-- Form Section -->
+    <section class="form-section">
+      <h2>Add New Patient</h2>
+      <form (submit)="addPatient()" class="patient-form">
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="name">Patient Name</label>
+            <input [(ngModel)]="patientForm.name" name="name" id="name" placeholder="Enter full name" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="age">Age</label>
+            <input [(ngModel)]="patientForm.age" name="age" id="age" type="number" placeholder="Enter age" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="blood">Blood Group</label>
+            <input [(ngModel)]="patientForm.blood" name="blood" id="blood" placeholder="e.g. O+ or AB-" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="prescription">Prescription</label>
+            <textarea [(ngModel)]="patientForm.prescription" name="prescription" id="prescription" placeholder="Enter prescription details" required></textarea>
+          </div>
+          
+          <div class="form-group">
+            <label for="dose">Dosage</label>
+            <input [(ngModel)]="patientForm.dose" name="dose" id="dose" placeholder="e.g. 500mg twice daily" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="fees">Total Fees (₹)</label>
+            <input [(ngModel)]="patientForm.fees" name="fees" id="fees" type="number" placeholder="Enter amount" required>
+          </div>
+        </div>
+        
+        <button type="submit" class="submit-btn">
+          <i class="fas fa-user-plus"></i> Add Patient
+        </button>
+      </form>
+    </section>
+
+    <!-- Patients List Section -->
+    <section class="list-section">
+      <h2 class="section-title">Patient Records</h2>
+      
+      <div class="patient-table">
+        <div class="table-header">
+          <div>Name</div>
+          <div>Age</div>
+          <div>Blood Group</div>
+          <div>Prescription</div>
+          <div>Dosage</div>
+          <div>Fees</div>
+          <div>Actions</div>
+        </div>
+        
+        <div class="table-body">
+          <div class="patient-row" *ngFor="let patient of patients">
+            <div>{{ patient.name }}</div>
+            <div>{{ patient.age }}</div>
+            <div>{{ patient.blood }}</div>
+            <div class="prescription">{{ patient.prescription }}</div>
+            <div>{{ patient.dose }}</div>
+            <div>₹{{ patient.fees }}</div>
+            <div class="actions">
+              <button (click)="updatePatient(patient.id)" class="update-btn">
+                <i class="fas fa-edit"></i> Update
+              </button>
+              <button (click)="deletePatient(patient.id)" class="delete-btn">
+                <i class="fas fa-trash-alt"></i> Delete
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

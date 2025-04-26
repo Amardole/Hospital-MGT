@@ -1,0 +1,15 @@
+<h2>Medicines</h2>
+
+<form (submit)="addMedicine()">
+  <input [(ngModel)]="medicineForm.name" name="name" placeholder="Medicine Name" required>
+  <input [(ngModel)]="medicineForm.quantity" name="quantity" placeholder="Quantity" required>
+  <button type="submit">Add Medicine</button>
+</form>
+
+<ul>
+  <li *ngFor="let medicine of medicines">
+    {{ medicine.name }} - {{ medicine.quantity }}
+    <button (click)="updateMedicine(medicine)">Update</button>
+    <button (click)="deleteMedicine(medicine.id)">Delete</button>
+  </li>
+</ul>
