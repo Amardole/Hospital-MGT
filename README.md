@@ -175,22 +175,22 @@ ng serve --open
 
 <p align="center">
   <img src="https://github.com/Amardole/Hospital-MGT/blob/main/ss/addpatients.png" width="700" alt="addpatients"/>
-  <br><b>1) AddPatients</b>
+  <br><b>2) AddPatients</b>
 </p>
 
 <p align="center">
   <img src="https://github.com/Amardole/Hospital-MGT/blob/main/ss/patientsrecords.png" width="700" alt="patientsrecords"/>
-  <br><b>1) PatientsRecords</b>
+  <br><b>3) PatientsRecords</b>
 </p>
 
 <p align="center">
   <img src="https://github.com/Amardole/Hospital-MGT/blob/main/ss/schappointment.png" width="700" alt="schappointment"/>
-  <br><b>1) SchAppointment</b>
+  <br><b>4) SchAppointment</b>
 </p>
 
 <p align="center">
   <img src="https://github.com/Amardole/Hospital-MGT/blob/main/ss/appointmentRecords.png" width="700" alt="appointmentRecords"/>
-  <br><b>1) AppointmentRecords</b>
+  <br><b>5) AppointmentRecords</b>
 </p>
 
 etc.
