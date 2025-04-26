@@ -173,7 +173,27 @@ ng serve --open
   <br><b>1) HomePage</b>
 </p>
 
+<p align="center">
+  <img src="https://github.com/Amardole/Hospital-MGT/blob/main/ss/addpatients.png" width="700" alt="addpatients"/>
+  <br><b>1) AddPatients</b>
+</p>
 
+<p align="center">
+  <img src="https://github.com/Amardole/Hospital-MGT/blob/main/ss/patientsrecords.png" width="700" alt="patientsrecords"/>
+  <br><b>1) PatientsRecords</b>
+</p>
+
+<p align="center">
+  <img src="https://github.com/Amardole/Hospital-MGT/blob/main/ss/schappointment.png" width="700" alt="schappointment"/>
+  <br><b>1) SchAppointment</b>
+</p>
+
+<p align="center">
+  <img src="https://github.com/Amardole/Hospital-MGT/blob/main/ss/addpatients.png" width="700" alt="addpatients"/>
+  <br><b>1) AddPatients</b>
+</p>
+
+etc.
 ---
 
 ## ⚡ Requirements Summary
