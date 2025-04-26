@@ -169,7 +169,7 @@ ng serve --open
 ## 🖼️ Project Screenshots
 
 <p align="center">
-  <img src="ss/homepage.jpeg" width="700" alt="Display Employees"/>
+  <img src="https://github.com/Amardole/Hospital-MGT/blob/main/ss/homepage.png" width="700" alt="HomePage"/>
   <br><b>1) HomePage</b>
 </p>
 
