@@ -202,6 +202,8 @@ etc.
 
 ## 🧑‍💻 Developed by
 - **Amar Dole**
+-  **[Linkedin](https://www.linkedin.com/in/amardole/)**
+-  **[Social Media](https://www.instagram.com/amardoleofficial)**
 
 ---
 
