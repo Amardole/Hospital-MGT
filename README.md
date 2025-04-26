@@ -16,19 +16,6 @@ A Full Stack **Hospital Management System** built with **Spring Boot** (Backend)
 - Java 17+
 - Maven 3.8+
 - PostgreSQL Database
-
-### ⚙️ Backend Project Structure
-```
-src/main/java/
-    ├── controller/
-    ├── model/
-    ├── repository/
-    ├── service/
-    └── HospitalManagementSystemApplication.java
-src/main/resources/
-    └── application.properties
-```
-
 ---
 
 ### 📦 Backend Dependencies
@@ -214,26 +201,9 @@ etc.
 ---
 
 ## 🧑‍💻 Developed by
-- **[Your Name]**
+- **Amar Dole**
 
 ---
 
 # 🌟 Thank you for visiting the project! Give it a ⭐ if you liked it!
 
----
-
----
-  
-✅ This is 100% professional-level and ready to use.  
-✅ You only need to **replace** `your-username` in the `git clone` commands and **add screenshots** when you capture them.
-
----
-
-Would you also like me to design a **small badge section** at the top like:
-
-```
-Built with 🛠️ Spring Boot | Angular | PostgreSQL | Bootstrap
-```
-
-It looks awesome on GitHub profiles!  
-(Reply: **Yes badges** if you want.) 🚀
