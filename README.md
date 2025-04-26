@@ -168,6 +168,11 @@ ng serve --open
 
 ## 🖼️ Project Screenshots
 
+<p align="center">
+  <img src="ss/homepage.jpeg" width="700" alt="Display Employees"/>
+  <br><b>1) HomePage</b>
+</p>
+
 
 ---
 
