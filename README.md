@@ -5,7 +5,7 @@ A Full Stack **Hospital Management System** built with **Spring Boot** (Backend)
 ---
 
 ## 📚 Tech Stack
-- **Backend:** Spring Boot, Hibernate (JPA), PostgreSQL
+- **Backend:** Spring Boot, Rest API, Hibernate (JPA), PostgreSQL
 - **Frontend:** Angular 17, Bootstrap 5, HTML, CSS, TypeScript
 
 ---
