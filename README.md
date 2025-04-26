@@ -189,8 +189,8 @@ ng serve --open
 </p>
 
 <p align="center">
-  <img src="https://github.com/Amardole/Hospital-MGT/blob/main/ss/addpatients.png" width="700" alt="addpatients"/>
-  <br><b>1) AddPatients</b>
+  <img src="https://github.com/Amardole/Hospital-MGT/blob/main/ss/appointmentRecords.png" width="700" alt="appointmentRecords"/>
+  <br><b>1) AppointmentRecords</b>
 </p>
 
 etc.
