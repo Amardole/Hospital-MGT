@@ -168,11 +168,6 @@ ng serve --open
 
 ## 🖼️ Project Screenshots
 
-| Homepage | Patients List | Appointments List | Medicines Management |
-|:--------:|:--------------:|:-----------------:|:--------------------:|
-| *(Add Screenshot 1)* | *(Add Screenshot 2)* | *(Add Screenshot 3)* | *(Add Screenshot 4)* |
-
-> *(Take some screenshots of your running project and add them here.)*
 
 ---
 
